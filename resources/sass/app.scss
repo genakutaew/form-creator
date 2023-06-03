@@ -1,0 +1,10 @@
+@import 'bootstrap/scss/bootstrap';
+
+table tr {
+    & td:last-child {
+        text-align: right;
+    }
+    & th:last-child {
+        text-align: right;
+    }
+}

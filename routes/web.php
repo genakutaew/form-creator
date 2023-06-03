@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ListingController::class, 'index']);
+
+Route::get('/show/{id}', [FormController::class, 'index']);
+Route::post('/show/{id}', [FormController::class, 'execute']);
+Route::get('/create', [FormController::class, 'create']);
+Route::get('/edit/{id}', [FormController::class, 'edit']);
