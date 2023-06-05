@@ -13,7 +13,7 @@ class ListingController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index(): View
+    public function index_view(): View
     {
         $forms = Form::all();
         return view('list', ['forms' => $forms]);

@@ -15,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ListingController::class, 'index']);
+Route::get('/', [ListingController::class, 'index_view']);
 
-Route::get('/show/{id}', [FormController::class, 'index']);
-Route::post('/show/{id}', [FormController::class, 'execute']);
-Route::get('/create', [FormController::class, 'create']);
-Route::get('/edit/{id}', [FormController::class, 'edit']);
+Route::get('/show/{id}', [FormController::class, 'index_view']);
+Route::post('/show/{id}', [FormController::class, 'index']);
+Route::get('/create', [FormController::class, 'create_view']);
+Route::post('/create', [FormController::class, 'create']);
+Route::get('/edit/{id}', [FormController::class, 'edit_view']);
+Route::post('/edit/{id}', [FormController::class, 'edit']);
+Route::get('/remove/{id}', [FormController::class, 'remove']);

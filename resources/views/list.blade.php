@@ -19,8 +19,8 @@
                 @foreach ($forms as $form)
                     <tr>
                         <th scope="row">{{ $form->id }}</th>
-                        <td><a href="/show/1">{{ $form->name }}</a></td>
-                        <td><a href="/edit/1">Edit</a></td>
+                        <td><a href="/show/{{ $form->id }}">{{ $form->name }}</a></td>
+                        <td><a href="/edit/{{ $form->id }}">Edit</a> <a href="/remove/{{ $form->id }}">Remove</a></td>
                     </tr>
                 @endforeach
                 </tbody>

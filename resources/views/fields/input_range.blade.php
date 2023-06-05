@@ -5,7 +5,4 @@
     id="field{{ $field->id }}"
     name="{{ $field->name }}"
     value="{{ $field->default_value }}"
-    min="{{$field->params['min']}}"
-    max="{{$field->params['max']}}"
-    step="{{$field->params['step']}}"
-    oninput="this.previousElementSibling.innerHTML = '{{ $field->name }}' + ' (' + this.value + ')'">
+    oninput="this.previousElementSibling.innerHTML = '{{ $field->label }}' + ' (' + this.value + ')'">

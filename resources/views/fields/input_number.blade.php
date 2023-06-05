@@ -5,7 +5,4 @@
     id="field{{ $field->id }}"
     name="{{ $field->name }}"
     value="{{ $field->default_value }}"
-    placeholder="{{ $field->params['placeholder'] }}"
-    min="{{ $field->params['min'] }}"
-    max="{{ $field->params['max'] }}"
     {{ $field->required ? 'required' : '' }}>

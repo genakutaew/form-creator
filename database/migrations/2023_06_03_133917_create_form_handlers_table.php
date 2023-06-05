@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('form_handlers', function (Blueprint $table) {
             $table->id();
-            $table->integer('form_id');
+            $table->foreignId('form_id')->references('id')->on('forms')->onDelete('cascade');
             $table->string('type')->nullable(false);
             $table->string('payload')->nullable(false);
             $table->timestamps();

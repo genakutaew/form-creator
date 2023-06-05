@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Form;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('form_fields', function (Blueprint $table) {
             $table->id();
-            $table->integer('form_id')->nullable(false);
+            $table->foreignId('form_id')->references('id')->on('forms')->onDelete('cascade');
             $table->string('label')->nullable(false);
             $table->string('name')->nullable(false);
             $table->string('selector')->nullable(false);

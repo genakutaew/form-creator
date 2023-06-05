@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Form extends Model
 {
     use HasFactory;
+    protected $fillable = ['id', 'name', 'submit_text'];
 
     public function fields(): HasMany
     {

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class FormHandler extends Model
 {
     use HasFactory;
+    protected $fillable = ['type', 'payload'];
 
     public function form(): HasOne
     {

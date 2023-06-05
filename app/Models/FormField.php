@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class FormField extends Model
 {
     use HasFactory;
+    protected $fillable = ['label', 'name', 'selector', 'selector_type', 'default_value', 'params', 'required'];
 
     protected $casts = [
         'params' => 'array',

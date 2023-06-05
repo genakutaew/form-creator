@@ -3,6 +3,15 @@
     <div class="row justify-content-md-center">
         <div class="col-md-8">
             <h2>{{ $form->name }}</h2>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form class="row g-3 needs-validation" method="post" novalidate>
                 @csrf
                 @foreach($form->fields as $field)

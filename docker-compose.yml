@@ -35,5 +35,12 @@ services:
     ports:
       - "3306:3306"
 
+  mailpit:
+    image: axllent/mailpit
+    container_name: form-mailpit
+    ports:
+     - "8025:8025"
+     - "1025:1025"
+
 volumes:
   mysql_data:

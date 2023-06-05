@@ -1,4 +1,5 @@
 import './bootstrap';
+import './vue';
 
 const forms = document.querySelectorAll('.needs-validation')
 
@@ -13,4 +14,3 @@ Array.prototype.slice.call(forms)
             form.classList.add('was-validated')
         }, false)
     })
-
