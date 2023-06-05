@@ -1,19 +1,24 @@
-DOCKER_COMPOSE = docker-compose
-
 build:
-	${DOCKER_COMPOSE} build
+	docker-compose build
 
 up:
-	${DOCKER_COMPOSE} up -d --remove-orphans
+	docker-compose up -d --remove-orphans
 
 down:
-	${DOCKER_COMPOSE} down
+	docker-compose down
 
 restart: down up
 
-
 php:
-	${DOCKER_COMPOSE} exec -u www-data php bash
+	docker-compose exec -u www-data php bash
 
 composer:
-	${DOCKER_COMPOSE} exec -u www-data php composer install
+	docker-compose exec -u www-data php composer install
+
+copy_env:
+	cp .env.example .env
+
+migrate:
+	docker-compose exec -u www-data php php artisan migrate
+
+first_run: up copy_env composer migrate
